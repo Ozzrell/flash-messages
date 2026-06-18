@@ -45,7 +45,7 @@ class FlashMessages extends Control
 	public function render(): void
 	{
 		$this->template->typeClasses = $this->typeClassMapping ?: self::$typeClasses;
-		$parent = $this->parent;
+		$parent = $this->getParent();
 		assert($parent instanceof Control);
 		$this->template->flashes = $parent->template->flashes;
 		assert($this->template instanceof Nette\Application\UI\ITemplate);
